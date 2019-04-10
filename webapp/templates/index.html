@@ -27,15 +27,20 @@
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0" method = post>
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <form class="form-inline my-2 my-lg-0" method = "post">
+          {{ form.hidden_tag() }}
+          <div class="form-group">
+            {{ form.search() }}
+          </div>
+          <div class="form-group">
+            {{ form.submit() }}
+          </div>
         </form>
       </div>
     </nav>
     <div class="container">
       <h1>Вы ввели в поиске:</h1>
-      <h2>Текст из строки поиска вывести сюда</h2>
+      <h2>Текст из строки поиска вывести сюда {{ form.search.data }}</h2>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
